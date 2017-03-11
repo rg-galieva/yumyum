@@ -2,7 +2,7 @@ const {resolve} = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const cssSettings = require('../../src/frontend/assets/styles/vars.js');
+const cssSettings = require('../../src/assets/styles/vars.js');
 
 module.exports = function () {
     return {
@@ -10,7 +10,7 @@ module.exports = function () {
 
         entry: {
             vendor: ['react', 'react-dom'],
-            app: './frontend/app.js'
+            app: './app.js'
         },
 
         module: {
