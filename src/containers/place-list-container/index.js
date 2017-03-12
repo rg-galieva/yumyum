@@ -73,8 +73,8 @@ class PlaceListContainer extends Component {
           headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
         }).then (res => this.setState({places: res}));
 
-        return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
-        </div>)
+        // return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+        // </div>)
     }
 
     render() {
