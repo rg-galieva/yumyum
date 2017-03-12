@@ -2,6 +2,7 @@
  * Created by zesc on 3/11/17.
  */
 import React, {PropTypes} from 'react'
+import s from './_style.css'
 
 const ReservItem = (props) => {
   let {rest_pic, rest_name, user_numb, link} = props.reserv;
