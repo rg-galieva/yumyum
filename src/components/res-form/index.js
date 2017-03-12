@@ -1,14 +1,49 @@
 import React, {PropTypes, Component} from 'react'
+import axios from 'axios'
 import s from './_styles.css'
 import Button from 'muicss/lib/react/button';
 import Geosuggest from 'react-geosuggest';
+import {API_POST_NEW_BOOKING, API_TOKEN} from '../../constants'
 
 class ResForm extends Component {
+    constructor() {
+        super();
+
+        this.state({
+            user_id: 1,
+            confirmation_number: 1234,
+            date_time: "2017-03-12T11:23:01.969Z",
+            party_size: 6,
+            restaurant_id: 4
+        })
+    }
 
     onSubmit = (ev) => {
         if (ev) ev.preventDefault();
+
+        axios({
+            method: 'post',
+            url: API_POST_NEW_BOOKING,
+            headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN},
+            data: {
+                "booking": {
+                    "user_id": 1,
+                    "confirmation_number": 1234,
+                    "date_time": "2017-03-12T11:23:01.969Z",
+                    "party_size": 6,
+                    "restaurant_id": 4
+                }
+            }
+        }).then(function (response) {
+            console.log(response);
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+
         console.log("---ResForm submitted",);
     }
+
 
     render() {
         return (
