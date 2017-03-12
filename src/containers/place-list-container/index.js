@@ -3,9 +3,9 @@ import axios from 'axios'
 import browserHistory from '../../history'
 import {connect} from 'react-redux'
 import Place from '../../components/place'
-import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES} from '../../constants'
+import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES, API_GET_GROUPS} from '../../constants'
 
-import place_list from '../../../test/db/place-list.json'
+// import place_list from '../../../test/db/place-list.json'
 
 // user_id, party_size: from app store
 // restaurant_id from this form
@@ -29,7 +29,7 @@ class PlaceListContainer extends Component {
         // put the result in state
     }
 
-    onSubmit = (ev) => {
+    onSubmit(ev) {
         if (ev) ev.preventDefault();
 
         axios({
@@ -53,7 +53,7 @@ class PlaceListContainer extends Component {
                 console.log(error);
             });
 
-        console.log("---ResForm submitted",);
+        console.log("---ResForm submitted");
     }
 
     selectPlace = (id) => (ev) => {
@@ -65,7 +65,12 @@ class PlaceListContainer extends Component {
         });
     }
 
-    getPlaceList = () => {
+    getPlaceList() {
+        place_list = axios({
+          method: 'get',
+          url: API_GET_GROUPS,
+          headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
+        });
         return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
         </div>)
     }
