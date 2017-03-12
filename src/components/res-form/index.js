@@ -1,5 +1,6 @@
 import React, {PropTypes, Component} from 'react'
 import axios from 'axios'
+import browserHistory from '../../history'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import s from './_styles.css'
@@ -37,14 +38,23 @@ class ResForm extends Component {
             }
         }).then(function (response) {
             console.log(response);
-        })
-            .catch(function (error) {
+            browserHistory.push('/places')
+        }).catch(function (error) {
                 console.log(error);
             });
 
         console.log("---ResForm submitted",);
     }
 
+    handleInputChange = (ev) => {
+        const target = ev.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
 
     render() {
         console.log("---user_id ", this.props.user[0].user_id);
@@ -69,10 +79,10 @@ class ResForm extends Component {
                     </label>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input className="mdl-textfield__input" type="number" id="persons"/>
-                        <label className="mdl-textfield__label" htmlFor="persons">Number of persons</label>
+                        <label className="mdl-textfield__label" htmlFor="persons">{this.state.party_size}</label>
                     </div>
                     <label htmlFor="time_start">
-                        <input type="text" name="time_start"/>
+                        <input type="text" name="date_time" value={this.state.date_time} onChange={this.handleInputChange}/>
                     </label>
                     <label htmlFor="time_end">
                         <input type="text" name="time_end"/>
@@ -80,9 +90,8 @@ class ResForm extends Component {
                     <label htmlFor="tags">
                         <input type="text" name="tags"/>
                     </label>
-                    <input type="submit" value="Submit"/>
+                    <Button color="primary" onClick={this.onSubmit}>button</Button>
                 </form>
-                <Button color="primary">button</Button>
             </div>
         )
     }

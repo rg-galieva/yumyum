@@ -8,15 +8,17 @@ class ReservListContainer extends Component {
     //   super();
     //   this.state = {}
     // }
+
     componentDidMount(){
-        new Promise((resolve, reject) => {
+        // ToDo Use Reducers & Actions + save data
+       new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(function(position) {
-                resolve(`${position.coords.latitude},${position.coords.longitude}`)
+                resolve(`[{'lat':${position.coords.latitude}}, {'lng': ${position.coords.longitude}}]`)
             });
         }).then((coords) => {
             console.log("---coords", coords);
-        })
-
+            return coords;
+        });
     }
 
     getListItem = () => {
@@ -31,6 +33,5 @@ class ReservListContainer extends Component {
         )
     }
 }
-
 
 export default ReservListContainer

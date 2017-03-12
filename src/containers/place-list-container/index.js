@@ -1,5 +1,6 @@
 import React, {PropTypes, Component} from 'react'
 import axios from 'axios'
+import browserHistory from '../../history'
 import {connect} from 'react-redux'
 import Place from '../../components/place'
 import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES} from '../../constants'
@@ -45,6 +46,7 @@ class PlaceListContainer extends Component {
                 }
             }
         }).then(function (response) {
+            browserHistory.push('/confirm')
             console.log(response);
         })
             .catch(function (error) {
