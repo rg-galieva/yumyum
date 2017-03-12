@@ -1109,6 +1109,10 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+classnames@^2.2.3:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.0.x:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.4.tgz#629896cc364f3c3d00b9908ee60dd18e4c6c6462"
@@ -2508,6 +2512,10 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
+lodash.debounce@^4.0.6:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+
 lodash.memoize@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -3605,6 +3613,17 @@ react-dom@^15.4.2:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+react-geolocated@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-1.0.1.tgz#82df28374fc1a6c934c3833acbed67e0ae7eb6b3"
+
+react-geosuggest@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-geosuggest/-/react-geosuggest-2.1.0.tgz#c27701359469a6afd2e7298a9bbe6c5615bbee32"
+  dependencies:
+    classnames "^2.2.3"
+    lodash.debounce "^4.0.6"
 
 react-hot-api@^0.4.5:
   version "0.4.7"

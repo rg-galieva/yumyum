@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 import ReservListContainer from '../../containers/reserv-list-container'
+
 import s from './_styles.css'
 
 function MainPage() {
+
     return (
         <div className={s.index}>
             <ReservListContainer/>
