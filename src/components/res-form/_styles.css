@@ -3,3 +3,17 @@
 .form {
 
 }
+
+/*label{*/
+  /*display: block;*/
+/*}*/
+
+.tab-container + label{
+  position: relative;
+  display: inline-block;
+}
+
+button .mdl-button{
+  float: right;
+  margin-top: 4%;
+}
