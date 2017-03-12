@@ -84,7 +84,7 @@ class PlaceListContainer extends Component {
           console.log(this.state.places)
           renderedPlaces = (
             <div>
-              {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+              {this.state.places}
             </div>)});
         } else {
           renderedPlaces = <div></div>
