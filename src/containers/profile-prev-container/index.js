@@ -1,6 +1,6 @@
 import React, {PropTypes, Component} from 'react'
 import ProfilePrev from '../../components/profile-prev'
-import axios from 'axios'
+// import axios from 'axios'
 import user_json from '../../../test/db/user.json'
 
 import {API_USER} from '../../constants'
