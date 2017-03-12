@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 
 function Place(props) {
-    let {id, name, pic, link, tag_list} = props;
+    let {id, name, pic, link, tag_list} = props.place;
 
     const getTagList = () => {
         return tag_list.map((tag) => <span key={tag.id}>{tag.txt}</span>)
@@ -22,12 +22,11 @@ Place.propTypes = {
         name: PropTypes.string.isRequired,
         pic: PropTypes.string,
         link: PropTypes.string,
-        tag_list: PropTypes.shape({
+        tag_list: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.number.isRequired,
             txt: PropTypes.string
-        })
+        }))
     })
 };
 
 export default Place;
-

@@ -10,7 +10,7 @@ class PlaceList extends Component {
     }
 
     getPlaceList = () => {
-        return this.place_list.map((place) => <div key={place.id}><Place place={place}/></div>)
+        return this.props.place_list.map((place) => <div key={place.id}><Place place={place}/></div>)
     }
 
     render() {

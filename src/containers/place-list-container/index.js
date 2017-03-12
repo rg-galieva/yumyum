@@ -1,6 +1,9 @@
 import React, {PropTypes, Component} from 'react'
 import axios from 'axios'
+import PlaceList from '../../components/place-list'
 import {API_GET_PLACES} from '../../constants'
+
+import place_list from '../../../test/db/place-list.json'
 
 class PlaceListContainer extends Component {
     constructor() {
@@ -21,7 +24,7 @@ class PlaceListContainer extends Component {
     render() {
         return (
             <div>
-
+                <PlaceList place_list={place_list}/>
             </div>
         );
     }
