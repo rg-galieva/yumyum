@@ -15,7 +15,6 @@ class ProfilePrevContainer extends Component {
 
     componentDidMount() {
         // axios.get(API_USER)
-
     }
 
     render() {
