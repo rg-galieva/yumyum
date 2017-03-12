@@ -1,0 +1,18 @@
+@import "../../assets/styles/vars.gcss";
+
+.card {
+  margin-bottom: 1rem;
+  background-color: var(--c_card);
+}
+
+.card_pic {
+  float: left;
+  margin-right: 1rem;
+}
+
+.card_info {
+
+  & > h2 {
+    font-size: calc(18rem / var(--f_size));
+  }
+}

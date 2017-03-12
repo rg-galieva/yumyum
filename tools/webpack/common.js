@@ -99,7 +99,7 @@ module.exports = function () {
         plugins: [
             new ExtractTextPlugin({filename: '[name].styles.css'}),
             new HtmlWebpackPlugin({
-                title: 'React Redux App',
+                title: 'OpenSeat',
                 favicon: '',
                 template: __dirname + '/template.html'
             })

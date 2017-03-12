@@ -4,11 +4,9 @@
 @import "form.gcss";
 
 html {
-  background-color: var(--c_bg);
-  color: var(--c_txt);
-
   font-family: sans-serif;
   font-weight: var(--f_light);
+  background: var(--c_bg);
 }
 
 h1,

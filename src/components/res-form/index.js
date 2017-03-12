@@ -22,9 +22,10 @@ class ResForm extends Component {
                     <label htmlFor="radius">
                         <input type="text" name="radius"/>
                     </label>
-                    <label htmlFor="persons">
-                        <input type="number" name="persons"/>
-                    </label>
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input className="mdl-textfield__input" type="text" id="persons"/>
+                        <label className="mdl-textfield__label" htmlFor="persons">Number of persons</label>
+                    </div>
                     <label htmlFor="time_start">
                         <input type="text" name="time_start"/>
                     </label>

@@ -1,0 +1,14 @@
+@import "../../assets/styles/vars.gcss";
+
+.upic {
+  width: calc(32rem/var(--f_size));
+  height: calc(32rem/var(--f_size));
+
+  & img {
+    border-radius: 50%;
+  }
+}
+
+.uname {
+  display: none;
+}
