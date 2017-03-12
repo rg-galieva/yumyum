@@ -78,8 +78,8 @@ class ResForm extends Component {
                         </select>
                     </label>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input className="mdl-textfield__input" type="number" id="persons"/>
-                        <label className="mdl-textfield__label" htmlFor="persons">Number of persons</label>
+                        <input className="mdl-textfield__input" type="number" id="party_size"/>
+                        <label className="mdl-textfield__label" htmlFor="party_size" onChange={this.handleInputChange}>{this.state.party_size}</label>
                     </div>
                     <div className="time-container">
                         <label htmlFor="time_start"><span>Time: </span>
