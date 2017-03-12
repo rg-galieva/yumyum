@@ -68,10 +68,6 @@ class ResForm extends Component {
                         <Geosuggest placeholder="tacos, cheap dinners, etc " inputClassName="mdl-textfield__input"/>
                         {/*https://github.com/ubilabs/react-geosuggest*/}
                     </div>
-                    <label htmlFor="radius-dist">
-                       
-                        
-                    </label>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
                         <select name="radius-dist" className="mdl-textfield__input" style={{ margin: "100 0"}}>
