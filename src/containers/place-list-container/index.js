@@ -78,11 +78,16 @@ class PlaceListContainer extends Component {
     }
 
     render() {
+        let renderedPlaces;
+        if (this.state.places) {
+          renderedPlaces =             <div>
+                          {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+                          </div>)};
+        } else {
+          renderedPlaces = <div></div>
+        }
         return (
-            <div>
-                {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
-                </div>)}
-
+            places
                 <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                         onClick={this.onSubmit}>
                     Button
