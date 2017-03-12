@@ -68,7 +68,7 @@ class PlaceListContainer extends Component {
     getPlaceList() {
         place_list = axios({
           method: 'get',
-          url: API_GET_GROUPS,
+          url: API_GET_PLACES,
           headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
         });
         return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
