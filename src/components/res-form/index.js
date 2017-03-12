@@ -79,19 +79,33 @@ class ResForm extends Component {
                     </label>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input className="mdl-textfield__input" type="number" id="persons"/>
-                        <label className="mdl-textfield__label" htmlFor="persons">{this.state.party_size}</label>
+                        <label className="mdl-textfield__label" htmlFor="persons">Number of persons</label>
                     </div>
-                    <label htmlFor="time_start">
-                        <input type="text" name="date_time" value={this.state.date_time} onChange={this.handleInputChange}/>
-                    </label>
-                    <label htmlFor="time_end">
-                        <input type="text" name="time_end"/>
-                    </label>
-                    <label htmlFor="tags">
-                        <input type="text" name="tags"/>
-                    </label>
-                    <Button color="primary" onClick={this.onSubmit}>button</Button>
+                    <div className="time-container">
+                        <label htmlFor="time_start"><span>Time: </span>
+                            from
+                            <input type="time" name="time_start" required/>
+                        </label>
+                        <label htmlFor="time_end">
+                            to
+                            <input type="time" name="time_end" required/>
+                        </label>
+                    </div>
+                    <div className="tags">
+                        <label htmlFor="tags">Topics:
+                            <input type="text" name="tags"/>
+                        </label>
+                    </div>
+                    <div className="prefs">
+                        <label htmlFor="prefs">
+                            Preferences:<input type="text" name="pref"/>
+                        </label>
+                    </div>
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                        Button
+                    </button>
                 </form>
+                <Button color="primary">button</Button>
             </div>
         )
     }
