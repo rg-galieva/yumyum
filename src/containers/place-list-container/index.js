@@ -3,9 +3,9 @@ import axios from 'axios'
 import browserHistory from '../../history'
 import {connect} from 'react-redux'
 import Place from '../../components/place'
-import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES} from '../../constants'
-
-import place_list from '../../../test/db/place-list.json'
+import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES, API_GET_GROUPS} from '../../constants'
+import s from './_styles.css'
+// import place_list from '../../../test/db/place-list.json'
 
 // user_id, party_size: from app store
 // restaurant_id from this form
@@ -17,19 +17,21 @@ class PlaceListContainer extends Component {
             confirmation_number: 5555,
             date_time: "2017-03-12T11:23:01.969Z",
             party_size: 6,
-            restaurant_id: 4
+            restaurant_id: 4,
+            places: {}
         }
     }
 
     componentDidMount() {
-        let {lat, lng} = this.props;
+        this.getPlaceList();
+        // let {lat, lng} = this.props;
         console.log("---user_id ", this.props.user[0].user_id);
 
         // axios.get(API_GET_PLACES)
         // put the result in state
     }
 
-    onSubmit = (ev) => {
+    onSubmit(ev) {
         if (ev) ev.preventDefault();
 
         axios({
@@ -53,7 +55,7 @@ class PlaceListContainer extends Component {
                 console.log(error);
             });
 
-        console.log("---ResForm submitted",);
+        console.log("---ResForm submitted");
     }
 
     selectPlace = (id) => (ev) => {
@@ -65,20 +67,34 @@ class PlaceListContainer extends Component {
         });
     }
 
-    getPlaceList = () => {
-        return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
-        </div>)
+    getPlaceList() {
+        axios({
+          method: 'get',
+          url: API_GET_PLACES,
+          headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
+        }).then (res => this.setState({places: res}));
     }
 
     render() {
-        return (
+        let renderedPlaces;
+        if (this.state.places) {
+          console.log(this.state.places)
+          renderedPlaces = (
             <div>
-                {this.getPlaceList()}
-
-                <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                        onClick={this.onSubmit}>
-                    Button
-                </button>
+              {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+            </div>)});
+        } else {
+          renderedPlaces = <div></div>
+        }
+        return (
+                <div className={s.place_list}>
+            {renderedPlaces}
+                <div className={s.btn}>
+                    <button onClick={this.onSubmit} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i className="material-icons">arrow_forward
+                        </i>
+                    </button>
+                </div>
             </div>
         );
     }

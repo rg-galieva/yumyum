@@ -7,11 +7,9 @@ const ReservItem = (props) => {
     return (
 
         <section className={s.card}>
-
             <div className={s.card_pic}>
                 <img src={rest_pic} alt={rest_name}/>
             </div>
-
 
             <div className={s.card_info}>
                 <h2>{rest_name}</h2>
@@ -20,13 +18,13 @@ const ReservItem = (props) => {
                 <a href={link}>Description</a>
                 <div className={s.tags}>
                     <span className="mdl-chip">
-                         <span className="mdl-chip__text">Basic Chip</span>
+                         <span className="mdl-chip__text">Chinese</span>
                     </span>
                     <span className="mdl-chip">
                          <span className="mdl-chip__text">Basic Chip</span>
                     </span>
                     <span className="mdl-chip">
-                         <span className="mdl-chip__text">Basic Chip</span>
+                         <span className="mdl-chip__text">Seafood</span>
                     </span>
                 </div>
 

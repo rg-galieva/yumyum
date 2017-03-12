@@ -1,0 +1,6 @@
+.place_list {
+
+  & .btn {
+    text-align: right;
+  }
+}

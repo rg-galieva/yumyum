@@ -86,11 +86,10 @@ class ResForm extends Component {
                         <input className="mdl-textfield__input" type="number" id="party_size"/>
                         <label className="mdl-textfield__label" htmlFor="party_size" onChange={this.handleInputChange}>{this.state.party_size}</label>
                     </div>
-
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" for="sample3">Start time</label>
                         <input className="mdl-textfield__input" type="time" id="sample1" placeholder="none"/>
-                    </div>
+                    </div>    
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" for="sample3">End time</label>
                         <input className="mdl-textfield__input" type="time" id="sample2" placeholder="none"/>

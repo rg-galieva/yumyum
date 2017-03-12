@@ -14,8 +14,8 @@ export default (
             <IndexRoute component={IndexPage}/>
             <Route path="/new-res" component={ResFormPage}/>
             <Route path="/places" component={PlaceListPage} />
-            <Route path="*" component={NoMatch}/>
             <Route path="/confirm" component={ConfirmContainerPage}/>
+            <Route path="*" component={NoMatch}/>
         </Route>
     </Router>
 )

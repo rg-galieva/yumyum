@@ -1,7 +1,7 @@
 :root {
   /* COLORS */
-  --c_bg: #f0f4f5;
-  --c_theme: #b8222d;
+  --c_bg: #f7f7f7;
+  --c_theme: #fff;
   --c_card: #fff;
   --c_txt: #333;
   --c_txt_inv: #fff;
