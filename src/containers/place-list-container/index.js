@@ -9,7 +9,6 @@ import place_list from '../../../test/db/place-list.json'
 
 // user_id, party_size: from app store
 // restaurant_id from this form
-
 class PlaceListContainer extends Component {
     constructor() {
         super();
@@ -23,13 +22,11 @@ class PlaceListContainer extends Component {
 
     componentDidMount() {
         let {lat, lng} = this.props;
-        console.log("---user_id ", this.props.user[0].user_id);
-
         // axios.get(API_GET_PLACES)
         // put the result in state
     }
 
-    onSubmit(ev) {
+    onSubmit = (ev) => {
         if (ev) ev.preventDefault();
 
         axios({
@@ -66,6 +63,7 @@ class PlaceListContainer extends Component {
     }
 
     getPlaceList() {
+<<<<<<< Updated upstream
         // place_list = axios({
         //   method: 'get',
         //   url: API_GET_GROUPS,
@@ -86,6 +84,34 @@ class PlaceListContainer extends Component {
                         </i>
                     </button>
                 </div>
+=======
+        axios({
+          method: 'get',
+          url: API_GET_PLACES,
+          headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
+        }).then (res => this.setState({ places: res }));
+    }
+
+    render() {
+        let renderedPlaces;
+        if (this.state.places) {
+          console.log(this.state.places)
+          renderedPlaces = (
+            <div>
+              {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>)}
+            </div>);
+        } else {
+          renderedPlaces = <div></div>
+        }
+
+        return (
+            <div>
+            {renderedPlaces}
+              <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                onClick={this.onSubmit}>
+                  Button
+                </button>
+>>>>>>> Stashed changes
             </div>
         );
     }
@@ -99,6 +125,7 @@ class PlaceListContainer extends Component {
 }
 
 function mapStateToProps({user}) {
+    console.log("---user", user);
     return {user}
 }
 
