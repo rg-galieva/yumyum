@@ -1,6 +1,7 @@
 import React, {PropTypes, Component} from 'react'
 import s from './_styles.css'
 import Button from 'muicss/lib/react/button';
+import Geosuggest from 'react-geosuggest';
 
 class ResForm extends Component {
 
@@ -13,11 +14,12 @@ class ResForm extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit} className={s.form}>
-                    <label for="location">
-                        Location:
-                        <input type="text" name="location"/>
+                    <label htmlFor="location">
+                        Your Location:
+                        <Geosuggest />
+                        {/*https://github.com/ubilabs/react-geosuggest*/}
                     </label>
-                    <label for="radius-dist">
+                    <label htmlFor="radius-dist">
                         Radius:
                         <select name="radius-dist">
                             <option>1 mile</option>
@@ -48,9 +50,5 @@ class ResForm extends Component {
     }
 }
 
-// ResForm.propTypes = {
-//     : PropTypes.
-// };
-
-export default ResForm;
+export default ResForm
 
