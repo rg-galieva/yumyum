@@ -31,6 +31,18 @@ module.exports = function (env) {
                 {
                     from: resolve(__dirname, './../../_redirects'),
                     to: './'
+                },
+                {
+                    from: resolve(__dirname, './../../favicon'),
+                    to: './favicon/'
+                },
+                {
+                    from: resolve(__dirname, './../../manifest.json'),
+                    to: './'
+                },
+                {
+                    from: resolve(__dirname, './../../browserconfig.xml'),
+                    to: './'
                 }
             ]),
             new webpack.LoaderOptionsPlugin({

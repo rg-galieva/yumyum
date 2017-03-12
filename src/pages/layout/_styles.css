@@ -34,6 +34,7 @@
   background: var(--c_theme);
   color: var(--c_txt_inv);
   padding: 1rem;
+  border-bottom: 1px solid var(--c_sub);
 }
 
 .head_cont {
@@ -48,12 +49,12 @@
 }
 
 .logo {
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
-  font-family: 'Josefin Sans', sans-serif;
+
+  & > svg {
+    width: calc(70rem/var(--f_size));
+  }
   color: var(--c_txt_inv);
   font-size: calc(26rem / var(--f_size));
-  text-transform: lowercase;
-  text-decoration: none;
 }
 
 .body {

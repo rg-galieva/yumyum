@@ -3,13 +3,15 @@ require('../../assets/styles/common.gcss')
 import s from './_styles.css'
 import {Link} from 'react-router'
 import ProfilePrevContainer from '../../containers/profile-prev-container'
+import logo from './logo.svg'
 
 export default function (props) {
     return (
         <div className={s.wrap}>
             <header className={s.head}>
                 <div className={s.head_cont}>
-                    <Link to="/" className={s.logo}>OpenSeat</Link>
+                    <div className={s.logo} dangerouslySetInnerHTML={{__html: logo}}></div>
+
                     <ProfilePrevContainer/>
                 </div>
             </header>
