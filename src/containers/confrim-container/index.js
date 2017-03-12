@@ -15,7 +15,10 @@ class ConfirmContainer extends Component {
 
         return (
             <div>
-
+                <h2>Congratulations,<br/>You are confirmed!</h2>
+                <img src="#"/>
+                <h3>Name of Restaurant</h3>
+                <ul>list of users</ul>
             </div>
         );
     }

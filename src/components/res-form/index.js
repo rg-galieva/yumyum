@@ -12,18 +12,23 @@ class ResForm extends Component {
     render() {
         return (
             <div>
-                <Button color="primary">button</Button>
-
                 <form onSubmit={this.onSubmit} className={s.form}>
-                    <label htmlFor="location">
+                    <label for="location">
                         Location:
                         <input type="text" name="location"/>
                     </label>
-                    <label htmlFor="radius">
-                        <input type="text" name="radius"/>
+                    <label for="radius-dist">
+                        Radius:
+                        <select name="radius-dist">
+                            <option>1 mile</option>
+                            <option>2 miles</option>
+                            <option>3 miles</option>
+                            <option>4 miles</option>
+                            <option>5 miles</option>
+                        </select>
                     </label>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input className="mdl-textfield__input" type="text" id="persons"/>
+                        <input className="mdl-textfield__input" type="number" id="persons"/>
                         <label className="mdl-textfield__label" htmlFor="persons">Number of persons</label>
                     </div>
                     <label htmlFor="time_start">
@@ -37,6 +42,7 @@ class ResForm extends Component {
                     </label>
                     <input type="submit" value="Submit"/>
                 </form>
+                <Button color="primary">button</Button>
             </div>
         )
     }

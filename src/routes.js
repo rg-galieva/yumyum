@@ -6,6 +6,7 @@ import IndexPage from './pages/index-page'
 import ResFormPage from './pages/res-form-page'
 import PlaceListPage from './pages/place-list-page'
 import NoMatch from './pages/no-match'
+import ConfirmContainerPage from './pages/confirm-page'
 
 export default (
     <Router history={history}>
@@ -14,6 +15,7 @@ export default (
             <Route path="/new-res" component={ResFormPage}/>
             <Route path="/places" component={PlaceListPage} />
             <Route path="*" component={NoMatch}/>
+            <Route path="/confirm" component={ConfirmContainerPage}/>
         </Route>
     </Router>
 )
