@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
+import ReservListContainer from '../../containers/reserv-list-container'
 
 function MainPage() {
     return (
         <div>
-            <h1>Welcome</h1>
+          <ReservListContainer/>
         </div>
     );
 }

@@ -1,21 +1,28 @@
 /**
  * Created by zesc on 3/11/17.
  */
-import React from 'react'
+import React, {Component} from 'react'
 import ReservItem from '../../components/reserv-item'
-import restaurant_list from '../../test/db/restauran-list.json'
+import restaurant_list from '../../../test/db/restaurantList.json'
 
 class ReservListContainer extends Component {
-  constructor() {
-    super();
-    this.state = {}
+  // constructor() {
+  //   super();
+  //   this.state = {}
+  // }
+
+  getListItem = () => {
+    return restaurant_list.map((reserv) => <ReservItem key={reserv.id} reserv={reserv}/>)
   }
 
-  render() {
-
-    <ReservItem/>
+   render() {
+    return (
+        <div>
+        {this.getListItem()}
+        </div>
+    )
   }
 }
 
 
-export default ItemContainer
+export default ReservListContainer

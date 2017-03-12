@@ -4,7 +4,7 @@
 import React, {PropTypes} from 'react'
 
 const ReservItem = (props) => {
-  let {rest_pic, rest_name, user_numb, link} = props;
+  let {rest_pic, rest_name, user_numb, link} = props.reserv;
 
   return (
       <div>
