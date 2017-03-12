@@ -9,7 +9,6 @@ import place_list from '../../../test/db/place-list.json'
 
 // user_id, party_size: from app store
 // restaurant_id from this form
-
 class PlaceListContainer extends Component {
     constructor() {
         super();
@@ -23,13 +22,11 @@ class PlaceListContainer extends Component {
 
     componentDidMount() {
         let {lat, lng} = this.props;
-        console.log("---user_id ", this.props.user[0].user_id);
-
         // axios.get(API_GET_PLACES)
         // put the result in state
     }
 
-    onSubmit(ev) {
+    onSubmit = (ev) => {
         if (ev) ev.preventDefault();
 
         axios({
@@ -99,6 +96,7 @@ class PlaceListContainer extends Component {
 }
 
 function mapStateToProps({user}) {
+    console.log("---user", user);
     return {user}
 }
 
