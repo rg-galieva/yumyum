@@ -8,6 +8,8 @@ import Button from 'muicss/lib/react/button';
 import Geosuggest from 'react-geosuggest';
 import {API_POST_NEW_BOOKING, API_TOKEN} from '../../constants'
 
+const style= { display: 'block', width: '100%'};
+
 class ResForm extends Component {
     constructor() {
         super();
@@ -63,12 +65,12 @@ class ResForm extends Component {
             <div>
                 <form onSubmit={this.onSubmit} className={s.form}>
                     
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
                         <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
                         <Geosuggest placeholder="tacos, cheap dinners, etc " inputClassName="mdl-textfield__input"/>
                         {/*https://github.com/ubilabs/react-geosuggest*/}
                     </div>
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
                         <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
                         <select name="radius-dist" className="mdl-textfield__input" style={{ margin: "100 0"}}>
                             <option>1 mile</option>
@@ -91,7 +93,7 @@ class ResForm extends Component {
                         <input className="mdl-textfield__input" type="time" id="sample2" placeholder="none"/>
                     </div>
 
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
                     <label className="mdl-textfield__label" for="sample3">Interest</label>
                         <input className="mdl-textfield__input" type="text" id="sample3" placeholder="Rails, React, Redux"/>
                         
