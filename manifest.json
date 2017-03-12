@@ -1,5 +1,5 @@
 {
-    "name": "",
+    "name": "OpenSeat",
     "icons": [
         {
             "src": "/favicon/android-chrome-96x96.png",
@@ -9,6 +9,11 @@
         {
             "src": "/favicon/mstile-150x150.png",
             "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
             "type": "image/png"
         }
     ],

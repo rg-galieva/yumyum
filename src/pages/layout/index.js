@@ -24,8 +24,8 @@ export default function (props) {
             <footer className={s.footer}>
                 <div className={s.foot_cont}>
                     <nav>
-                        <a href="https://www.opentable.com" target="_blank">OpenTable</a>
-                        <a href="https://netlify.com" target="_blank">Netlify</a>
+                        <a href="https://www.opentable.com">OpenTable</a>
+                        <a href="https://netlify.com">Netlify</a>
                     </nav>
                 </div>
             </footer>
