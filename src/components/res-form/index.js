@@ -15,7 +15,7 @@ class ResForm extends Component {
         this.state = {
             confirmation_number: 1234,
             date_time: "2017-03-12T11:23:01.969Z",
-            party_size: 6,
+            party_size: "Party size",
             restaurant_id: 4
         }
     }
@@ -62,50 +62,45 @@ class ResForm extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit} className={s.form}>
-                    <label htmlFor="location">
-                        Your Location:
-                        <Geosuggest />
+                    
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
+                        <Geosuggest placeholder="tacos, cheap dinners, etc " inputClassName="mdl-textfield__input"/>
                         {/*https://github.com/ubilabs/react-geosuggest*/}
-                    </label>
-                    <label htmlFor="radius-dist">
-                        Radius:
-                        <select name="radius-dist">
+                    </div>
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
+                        <select name="radius-dist" className="mdl-textfield__input" style={{ margin: "100 0"}}>
                             <option>1 mile</option>
                             <option>2 miles</option>
                             <option>3 miles</option>
                             <option>4 miles</option>
                             <option>5 miles</option>
                         </select>
-                    </label>
+                    </div>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input className="mdl-textfield__input" type="number" id="party_size"/>
                         <label className="mdl-textfield__label" htmlFor="party_size" onChange={this.handleInputChange}>{this.state.party_size}</label>
                     </div>
-                    <div className="time-container">
-                        <label htmlFor="time_start"><span>Time: </span>
-                            from
-                            <input type="time" name="time_start"/>
-                        </label>
-                        <label htmlFor="time_end">
-                            to
-                            <input type="time" name="time_end"/>
-                        </label>
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label className="mdl-textfield__label" for="sample3">Start time</label>
+                        <input className="mdl-textfield__input" type="time" id="sample1" placeholder="none"/>
+                    </div>    
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label className="mdl-textfield__label" for="sample3">End time</label>
+                        <input className="mdl-textfield__input" type="time" id="sample2" placeholder="none"/>
                     </div>
-                    <div className="tags">
-                        <label htmlFor="tags">Topics:
-                            <input type="text" name="tags"/>
-                        </label>
+
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label className="mdl-textfield__label" for="sample3">Interest</label>
+                        <input className="mdl-textfield__input" type="text" id="sample3" placeholder="Rails, React, Redux"/>
+                        
                     </div>
-                    <div className="prefs">
-                        <label htmlFor="prefs">
-                            Preferences:<input type="text" name="pref"/>
-                        </label>
-                    </div>
-                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                        Button
+    
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style={{ float: 'right'}}>
+                      Confirm
                     </button>
                 </form>
-                <Button color="primary">button</Button>
             </div>
         )
     }
