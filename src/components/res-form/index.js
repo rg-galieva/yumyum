@@ -1,5 +1,7 @@
 import React, {PropTypes, Component} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 import s from './_styles.css'
 import Button from 'muicss/lib/react/button';
 import Geosuggest from 'react-geosuggest';
@@ -9,13 +11,12 @@ class ResForm extends Component {
     constructor() {
         super();
 
-        this.state({
-            user_id: 1,
+        this.state = {
             confirmation_number: 1234,
             date_time: "2017-03-12T11:23:01.969Z",
             party_size: 6,
             restaurant_id: 4
-        })
+        }
     }
 
     onSubmit = (ev) => {
@@ -27,7 +28,7 @@ class ResForm extends Component {
             headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN},
             data: {
                 "booking": {
-                    "user_id": 1,
+                    "user_id": this.props.user[0].user_id,
                     "confirmation_number": 1234,
                     "date_time": "2017-03-12T11:23:01.969Z",
                     "party_size": 6,
@@ -46,6 +47,8 @@ class ResForm extends Component {
 
 
     render() {
+        console.log("---user_id ", this.props.user[0].user_id);
+
         return (
             <div>
                 <form onSubmit={this.onSubmit} className={s.form}>
@@ -85,5 +88,12 @@ class ResForm extends Component {
     }
 }
 
-export default ResForm
+function mapStateToProps({user}) {
+    return {user}
+}
 
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators({fetchWeather}, dispatch)
+// }
+
+export default connect(mapStateToProps)(ResForm)
