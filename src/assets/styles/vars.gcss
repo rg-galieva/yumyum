@@ -1,7 +1,10 @@
 :root {
   /* COLORS */
-  --c_bg: #222;
-  --c_txt: #fff;
+  --c_bg: #f0f4f5;
+  --c_theme: #b8222d;
+  --c_card: #fff;
+  --c_txt: #333;
+  --c_txt_inv: #fff;
   --c_link: #a2a2a2;
   --c_link_vis: #a1a1a1;
   --c_emph: #5fffee;

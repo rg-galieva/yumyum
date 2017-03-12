@@ -1,27 +1,31 @@
 import React from 'react'
-require ('../../assets/styles/common.gcss')
+require('../../assets/styles/common.gcss')
 import s from './_styles.css'
 import {Link} from 'react-router'
-import ProfilePicContainer from '../../containers/profile-prev-container'
+import ProfilePrevContainer from '../../containers/profile-prev-container'
 
 export default function (props) {
     return (
         <div className={s.wrap}>
-            <header>
-                <Link to="/" className={s.logo}>RG <mark>YumYum</mark></Link>
-                <ProfilePicContainer/>
+            <header className={s.head}>
+                <div className={s.head_cont}>
+                    <Link to="/" className={s.logo}>OpenSeat</Link>
+                    <ProfilePrevContainer/>
+                </div>
             </header>
 
-            <main>
+            <main className={s.body}>
                 {props.children}
             </main>
 
-            <footer>
-                <nav>
-                    <a href="">Links</a>
-                    <a href="">Links</a>
-                    <a href="">Links</a>
-                </nav>
+            <footer className={s.footer}>
+                <div className={s.foot_cont}>
+                    <nav>
+                        <a href="">Links</a>
+                        <a href="">Links</a>
+                        <a href="">Links</a>
+                    </nav>
+                </div>
             </footer>
         </div>
     );
