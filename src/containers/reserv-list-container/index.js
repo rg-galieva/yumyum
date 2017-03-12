@@ -1,36 +1,22 @@
 import React, {Component} from 'react'
-
 import axios from 'axios'
 import ReservItem from '../../components/reserv-item'
 import restaurant_list from '../../../test/db/restaurantList.json'
-import {API_GET_GROUPS, API_TOKEN} from '../../constants'
 
 class ReservListContainer extends Component {
     // constructor() {
     //   super();
     //   this.state = {}
     // }
-
-    componentDidMount() {
-        // ToDo Use Reducers & Actions + save data
+    componentDidMount(){
         new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                resolve(`[{'lat':${position.coords.latitude}}, {'lng': ${position.coords.longitude}}]`)
+            navigator.geolocation.getCurrentPosition(function(position) {
+                resolve(`${position.coords.latitude},${position.coords.longitude}`)
             });
         }).then((coords) => {
-            axios({
-                method: 'get',
-                url: API_GET_GROUPS,
-                headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN},
-            }).then(function (response) {
-                console.log("response", response);
-                let places = response.data.map((reserv) => <ReservItem key={reserv.id} reserv={reserv}/>);
-                // this.refs.list_items = places
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        });
+            console.log("---coords", coords);
+        })
+
     }
 
     getListItem = () => {
@@ -39,11 +25,12 @@ class ReservListContainer extends Component {
 
     render() {
         return (
-            <div ref="list_items">
+            <div>
                 {this.getListItem()}
             </div>
         )
     }
 }
+
 
 export default ReservListContainer

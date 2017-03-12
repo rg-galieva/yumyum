@@ -22,7 +22,8 @@ class PlaceListContainer extends Component {
     }
 
     componentDidMount() {
-        let {lat, lng} = this.props;
+        this.getPlaceList();
+        // let {lat, lng} = this.props;
         console.log("---user_id ", this.props.user[0].user_id);
 
         // axios.get(API_GET_PLACES)
@@ -66,11 +67,12 @@ class PlaceListContainer extends Component {
     }
 
     getPlaceList() {
-        place_list = axios({
+        axios({
           method: 'get',
-          url: API_GET_GROUPS,
+          url: API_GET_PLACES,
           headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
-        });
+        }).then (res => this.setState({places: res}));
+
         return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
         </div>)
     }
@@ -78,7 +80,8 @@ class PlaceListContainer extends Component {
     render() {
         return (
             <div>
-                {this.getPlaceList()}
+                {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+                </div>)}
 
                 <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                         onClick={this.onSubmit}>
