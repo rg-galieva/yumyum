@@ -84,11 +84,11 @@ class ResForm extends Component {
                     <div className="time-container">
                         <label htmlFor="time_start"><span>Time: </span>
                             from
-                            <input type="time" name="time_start" required/>
+                            <input type="time" name="time_start"/>
                         </label>
                         <label htmlFor="time_end">
                             to
-                            <input type="time" name="time_end" required/>
+                            <input type="time" name="time_end"/>
                         </label>
                     </div>
                     <div className="tags">

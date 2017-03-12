@@ -4,7 +4,7 @@ import browserHistory from '../../history'
 import {connect} from 'react-redux'
 import Place from '../../components/place'
 import {API_POST_NEW_BOOKING, API_TOKEN, API_GET_PLACES, API_GET_GROUPS} from '../../constants'
-
+import s from './_styles.css'
 // import place_list from '../../../test/db/place-list.json'
 
 // user_id, party_size: from app store
@@ -77,13 +77,15 @@ class PlaceListContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className={s.place_list}>
                 {this.getPlaceList()}
 
-                <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                        onClick={this.onSubmit}>
-                    Button
-                </button>
+                <div className={s.btn}>
+                    <button onClick={this.onSubmit} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i className="material-icons">arrow_forward
+                        </i>
+                    </button>
+                </div>
             </div>
         );
     }
