@@ -18,6 +18,7 @@
   margin-right: 1rem;
   text-align: left;
   min-height: calc(200rem/var(--f_size));
+  /*max-width: calc(200rem/var(--f_size));*/
 
   & > span {
     position: absolute;

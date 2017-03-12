@@ -1,0 +1,12 @@
+@import "../../assets/styles/vars.gcss";
+
+.confirm {
+  width: 60%;
+  margin: 0 auto;
+  background-color: var(--c_theme);
+  text-align: center;
+
+  & > :global(.mdl-card__title) {
+    background-image: url('https://s3-media2.fl.yelpcdn.com/bphoto/16VSfrgwjDy-qkVMAfkMIQ/o.jpg');
+  }
+}
