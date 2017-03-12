@@ -17,7 +17,8 @@ class PlaceListContainer extends Component {
             confirmation_number: 5555,
             date_time: "2017-03-12T11:23:01.969Z",
             party_size: 6,
-            restaurant_id: 4
+            restaurant_id: 4,
+            places: {}
         }
     }
 
@@ -80,17 +81,18 @@ class PlaceListContainer extends Component {
     render() {
         let renderedPlaces;
         if (this.state.places) {
-          renderedPlaces =             <div>
-                          {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
-                          </div>)};
+          renderedPlaces = (
+            <div>
+              {this.state.places.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
+            </div>)});
         } else {
           renderedPlaces = <div></div>
         }
         return (
-            places
-                <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                        onClick={this.onSubmit}>
-                    Button
+            {renderedPlaces}
+              <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                onClick={this.onSubmit}>
+                  Button
                 </button>
             </div>
         );
