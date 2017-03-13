@@ -14,21 +14,16 @@ function Place(props) {
     }
 
     return (
-        <section className={s.card} onClick={redirect(link)}>
-            <div className={s.card_pic}>
-                <img src={pic} alt={name}/>
-            </div>
+        <section className={s.card}>
+            <div className={s.card_pic} style={{backgroundImage: `url(${pic})`}}></div>
 
             <div className={s.card_info}>
                 <h2>{name}</h2>
-                <p>Table for: 4</p>
-                <p>Topic</p>
-                <p>Description</p>
-                <div className={s.tags}>
-                    {getTagList()}
-                </div>
 
-
+                <button
+                    className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Select
+                </button>
             </div>
         </section>
     );

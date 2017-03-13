@@ -1,6 +1,13 @@
-.place_list {
+.btn {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 1rem;
+}
 
-  & .btn {
-    text-align: right;
-  }
+.groupList {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  align-items: stretch;
+  justify-content: space-between;
 }

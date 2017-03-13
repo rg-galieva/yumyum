@@ -8,7 +8,7 @@ import Button from 'muicss/lib/react/button';
 import Geosuggest from 'react-geosuggest';
 import {API_POST_NEW_BOOKING, API_TOKEN} from '../../constants'
 
-const style= { display: 'block', width: '100%'};
+const style = {display: 'block', width: '100%'};
 
 class ResForm extends Component {
     constructor() {
@@ -42,8 +42,8 @@ class ResForm extends Component {
             console.log(response);
             browserHistory.push('/places')
         }).catch(function (error) {
-                console.log(error);
-            });
+            console.log(error);
+        });
 
         console.log("---ResForm submitted",);
     }
@@ -62,48 +62,44 @@ class ResForm extends Component {
         console.log("---user_id ", this.props.user[0].user_id);
 
         return (
-            <div>
-                <form onSubmit={this.onSubmit} className={s.form}>
-                    
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
-                        <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
-                        <Geosuggest placeholder="tacos, cheap dinners, etc " inputClassName="mdl-textfield__input"/>
-                        {/*https://github.com/ubilabs/react-geosuggest*/}
-                    </div>
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
-                        <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
-                        <select name="radius-dist" className="mdl-textfield__input" style={{ margin: "100 0"}}>
-                            <option>1 mile</option>
-                            <option>2 miles</option>
-                            <option>3 miles</option>
-                            <option>4 miles</option>
-                            <option>5 miles</option>
-                        </select>
-                    </div>
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input className="mdl-textfield__input" type="number" id="party_size"/>
-                        <label className="mdl-textfield__label" htmlFor="party_size" onChange={this.handleInputChange}>{this.state.party_size}</label>
-                    </div>
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <label className="mdl-textfield__label" for="sample3">Start time</label>
-                        <input className="mdl-textfield__input" type="time" id="sample1" placeholder="none"/>
-                    </div>    
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <label className="mdl-textfield__label" for="sample3">End time</label>
-                        <input className="mdl-textfield__input" type="time" id="sample2" placeholder="none"/>
-                    </div>
+            <form onSubmit={this.onSubmit} className={s.form}>
 
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
+                    <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
+                    <Geosuggest placeholder="tacos, cheap dinners, etc " inputClassName="mdl-textfield__input"/>
+                    {/*https://github.com/ubilabs/react-geosuggest*/}
+                </div>
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
+                    <label className="mdl-textfield__label" for="sample0">Find Restaurants</label>
+                    <select name="radius-dist" className="mdl-textfield__input" style={{margin: "100 0"}}>
+                        <option>1 mile</option>
+                        <option>2 miles</option>
+                        <option>3 miles</option>
+                        <option>4 miles</option>
+                        <option>5 miles</option>
+                    </select>
+                </div>
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input className="mdl-textfield__input" type="number" id="party_size"/>
+                    <label className="mdl-textfield__label" htmlFor="party_size"
+                           onChange={this.handleInputChange}>{this.state.party_size}</label>
+                </div>
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label className="mdl-textfield__label" for="sample3">Start time</label>
+                    <input className="mdl-textfield__input" type="text" id="sample1" placeholder="none"/>
+                </div>
+
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style={ style }>
                     <label className="mdl-textfield__label" for="sample3">Interest</label>
-                        <input className="mdl-textfield__input" type="text" id="sample3" placeholder="Rails, React, Redux"/>
-                        
-                    </div>
-    
-                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style={{ float: 'right'}}>
-                      Confirm
-                    </button>
-                </form>
-            </div>
+                    <input className="mdl-textfield__input" type="text" id="sample3" placeholder="Rails, React, Redux"/>
+
+                </div>
+
+                <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+                        style={{float: 'right'}}>
+                    Confirm
+                </button>
+            </form>
         )
     }
 }

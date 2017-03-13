@@ -68,14 +68,16 @@ class PlaceListContainer extends Component {
         //   url: API_GET_GROUPS,
         //   headers: {'Content-Type': 'application/json', 'Authorization': API_TOKEN}
         // });
-        return place_list.map((place) => <div key={place.id} onClick={this.selectPlace(place.id)}><Place place={place}/>
-        </div>)
+        return place_list.map((place) => <Place place={place} key={place.id} onClick={this.selectPlace(place.id)}/>)
     }
 
     render() {
         return (
             <div className={s.place_list}>
-                {this.getPlaceList()}
+                <div className={s.groupList}>
+                    {this.getPlaceList()}
+                </div>
+
 
                 <div className={s.btn}>
                     <button onClick={this.onSubmit} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
