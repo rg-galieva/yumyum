@@ -1,9 +1,9 @@
 @import "../../assets/styles/vars.gcss";
 
 .wrap {
-  min-height: calc(100% - 40rem/var(--f_size));
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   & > header {
     position: relative;
@@ -16,6 +16,9 @@
 
   & > footer {
     flex: 0 0 auto;
+    background: var(--c_txt);
+    padding: 1rem;
+    color: var(--c_txt_inv);
 
     & a {
       margin-right: 20px;
@@ -62,12 +65,6 @@
   max-width: 1400px;
   margin: calc(20rem / var(--f_size)) auto;
   padding: 0 calc(100% / var(--f_size));
-}
-
-.footer {
-  padding: 1rem;
-  background: var(--c_txt);
-  color: var(--c_txt_inv);
 }
 
 .foot_cont {

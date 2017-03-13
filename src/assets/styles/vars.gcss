@@ -11,6 +11,7 @@
   --c_thead: #0e0e0e;
   --c_sub: #efeaea;
   --c_like: #fe536d;
+  --c_shadow: #3c69de;
   
   /*  TYPOGRAPHY */
   --f_size: 16;

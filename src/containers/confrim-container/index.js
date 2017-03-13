@@ -29,16 +29,6 @@ class ConfirmContainer extends Component {
                 </button>
             </div>
         </div>
-            
-            // <div className={s.confirm}>
-            //     <h2>Congratulations!</h2>
-            //     <div>
-            //         <img src="https://s3-media2.fl.yelpcdn.com/bphoto/16VSfrgwjDy-qkVMAfkMIQ/o.jpg"/>
-            //     </div>
-            //
-            //     <h3>Name of Restaurant</h3>
-            //     <ul>list of users</ul>
-            // </div>
         );
     }
 }

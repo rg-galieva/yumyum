@@ -1,0 +1,9 @@
+@import "../../assets/styles/vars.gcss";
+
+.groupList {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  align-items: stretch;
+  justify-content: space-between;
+}
